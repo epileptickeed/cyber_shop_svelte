@@ -37,7 +37,7 @@
             <div class="flex items-start gap-4 p-8 flex-col">
                 <h1 class="text-[64px]">Macbook <strong>Air</strong></h1>
                 <p class="text-[14px]">The new 15‑inch MacBook Air makes room for more of what you love with a spacious Liquid Retina display.</p>
-                <Button variant='default' color='black' />
+                <Button variant='default' color='black' text='Shop Now' />
             </div>
             <img src="Macbook.png" alt="Mac">
         </div>

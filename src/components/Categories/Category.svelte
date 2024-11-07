@@ -38,7 +38,7 @@
 
 
 </script>
-<div class="max-w-[1440px] m-auto flex gap-8 flex-col py-16">
+<div class="max-w-[1120px] m-auto flex gap-8 flex-col py-16">
     <div class="flex items-center justify-between gap-4">
         <h1 class="text-[24px]">Browse By Category</h1>
         <div class="flex gap-4">

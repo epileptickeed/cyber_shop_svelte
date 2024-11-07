@@ -1,14 +1,14 @@
 <script lang="ts">
-    let { variant, color = 'white' } = $props()
+    let { variant, color = 'white', text } = $props()
 </script>
 
 {#if variant === 'default'}
     <button class="px-12 py-4 rounded-lg text-{color} text-[16px] transition">
-        Shop Now
+        {text ? text : 'Shop now'}
     </button>
 {:else if variant === 'secondary'}
     <button class="px-12 py-3 border-[#000] bg-[#000] rounded-lg text-{color} text-[16px] transition">
-        Shop Now
+        {text ? text : 'Shop now'}
     </button>
 {/if}
 
