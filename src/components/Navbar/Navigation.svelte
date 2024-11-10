@@ -2,12 +2,13 @@
 	import { browser } from "$app/environment";
 
 
-	import { Heart, ShoppingCart, User } from "lucide-svelte";
+	import { Heart, ShoppingCart, User, Menu } from "lucide-svelte";
 	import { onDestroy, onMount } from "svelte";
 	import { writable, type Writable } from "svelte/store";
 
     const isCartOpen = writable(false)
     const isFavoriteOpen = writable(false)
+    const isMenuOpen = writable(false)
     
     const toggle = (event: any, modal: Writable<boolean>) => {
         event.stopPropagation()
@@ -19,8 +20,6 @@
         event.set(false)
     }
 
-
-
     const handleClickOutside = (event: any) => {
         const cartElement = document.getElementById("cart");
         if(cartElement && !cartElement.contains(event.target)){
@@ -29,6 +28,10 @@
         const favoriteElement = document.getElementById('favorite')
         if(favoriteElement && !favoriteElement.contains(event.target)){
             close(isFavoriteOpen)
+        }
+        const menuElement = document.getElementById('menu')
+        if(menuElement && !menuElement.contains(event.target)){
+            close(isMenuOpen)
         }
     }
 
@@ -40,11 +43,13 @@
             document.removeEventListener('click', handleClickOutside)
         })
     }
-
-    console.log(isCartOpen)
+    
+    const handleMenuOpen = () => {
+        isMenuOpen.update((value) => !value)
+    }
 
 </script>
-<div class="flex items-center justify-between gap-[52px] relative">
+<div class="hidden lg:flex items-center justify-between gap-[52px] relative ">
     <a href="/">Home</a>
     <a href="/">About</a>
     <a href="/">Contact Us</a>
@@ -67,6 +72,20 @@
             <h3 class="p-4 border-b">Это избранные!</h3>
         </div>
     {/if}
+</div>
+
+<div id="menu" class="lg:hidden relative">
+    <Menu size={36} onclick={() => handleMenuOpen()} />
+    <div class={$isMenuOpen ? 'z-10 bg-white w-[230px] fixed top-0 h-full right-0 border flex items-start flex-col p-8 gap-8' : 'hidden'}>
+        <a href="/">Home</a>
+        <a href="/">About</a>
+        <a href="/">Contact Us</a>
+        <a href="/">Blog</a>
+
+        <a href="/"><Heart /></a>
+        <a href="/"><ShoppingCart /></a>
+        <a href="/"><User /></a>
+    </div>
 </div>
 
 <style>

@@ -38,7 +38,9 @@
 
 
 </script>
-<div class="max-w-[1120px] m-auto flex gap-8 flex-col py-16">
+
+<div class="max-w-[1120px] m-auto flex gap-8 flex-col py-16 px-4 md:px-0">
+
     <div class="flex items-center justify-between gap-4">
         <h1 class="text-[24px]">Browse By Category</h1>
         <div class="flex gap-4">
@@ -55,17 +57,8 @@
                 </div>
             {/if}
         {/each}
-        <!-- <div class="items"><Smartphone size={48} />Phones</div>
-        <div class="items"><Watch size={48} />Smart Watches</div>
-        <div class="items"><Camera size={48} />Cameras</div>
-        <div class="items"><Headphones size={48} />Headphones</div>
-        <div class="items"><TvMinimal size={48} /d>Computers</div>
-        <div class="items"><Gamepad size={48} />Gaming</div>
-        
-        <div class="items"><Gamepad size={48} />Gaming</div>
-        <div class="items"><Gamepad size={48} />Gaming</div> -->
-
     </div>
+
 </div>
 
 <style>

@@ -12,10 +12,6 @@
     const handleClick = (i: number) => {
         pickedHeader.set(i)
     }
-    
-    pickedHeader.subscribe(value => {
-        console.log(value)
-    })
 
     let headers = [
         { title: "New Arrival"},
@@ -37,8 +33,8 @@
 
 </script>
 
-<div >
-    <div class="flex gap-6 pb-8 py-12 text-[18px]">
+<div>
+    <div class="flex flex-col items-start sm:flex-row gap-6 pb-8 py-12 text-[18px] p-4 xl:px-0">
         {#each headers as header, index}
             <button class={index === $pickedHeader ? "activeHeader" : "header"} onclick={() => handleClick(index)}>
                 {header.title}
@@ -46,8 +42,8 @@
         {/each}
     </div>
 
-    <div class="flex items-center justify-between flex-wrap gap-4">
-        {#each Items as { item: ItemComponent },index }
+    <div class="px-4 xl:px-0">
+        {#each Items as { item: ItemComponent }, index }
             <div class={$pickedHeader === index ? "" : 'hidden'}>
                 <ItemComponent />
             </div>

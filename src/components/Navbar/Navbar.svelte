@@ -4,7 +4,7 @@
     import { Search } from "lucide-svelte";
 </script>
 
-<div class="flex items-center justify-between p-4">
+<div class="flex justify-around items-center lg:items-center lg:justify-between p-4">
     <img src="/Logo.png" alt="logo">
     <label for="search" class="relative w-[372px]">
         <Search class="absolute top-4 left-4 text-gray-400" />
